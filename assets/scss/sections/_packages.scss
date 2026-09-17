@@ -1,0 +1,223 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+
+.tours-section {
+    @include section-padding;
+
+    background-color: $color-surface;
+
+
+    // =================================
+    // Section Heading
+    // =================================
+
+    .section-heading {
+        max-width: 750px;
+        margin: 0 auto 3rem;
+
+        &__text {
+            max-width: 650px;
+
+            margin-top: 1rem;
+
+            color: rgba($color-dark, 0.7);
+            line-height: 1.8;
+        }
+    }
+
+
+    // =================================
+    // Tour Card
+    // =================================
+
+    .tour-card {
+
+        position: relative;
+
+        display: block;
+
+        height: 440px;
+
+        overflow: hidden;
+
+        border-radius: 6px;
+
+        color: $color-white;
+        text-decoration: none;
+
+        background-color: $color-dark;
+
+        isolation: isolate;
+
+
+        // -----------------------------
+        // Image
+        // -----------------------------
+
+        &__image {
+
+            position: absolute;
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition:
+                transform 0.6s ease;
+        }
+
+
+        // -----------------------------
+        // Overlay
+        // -----------------------------
+
+        &__overlay {
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba($color-dark, 0.85) 0%,
+                    rgba($color-dark, 0.35) 45%,
+                    rgba($color-dark, 0.05) 100%
+                );
+
+            transition:
+                background 0.4s ease;
+        }
+
+
+        // -----------------------------
+        // Content
+        // -----------------------------
+
+        &__content {
+
+            position: absolute;
+
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            padding: 2rem;
+
+            transform: translateY(65px);
+
+            transition:
+                transform 0.45s ease;
+        }
+
+
+        // -----------------------------
+        // Title
+        // -----------------------------
+
+        &__title {
+
+            display: inline-block;
+
+            margin: 0;
+
+            padding: 0.7rem 1rem;
+
+            background-color: $color-primary;
+
+            color: $color-white;
+
+            font-family: $font-heading;
+            font-size: 1.35rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+
+        // -----------------------------
+        // Description
+        // -----------------------------
+
+        &__description {
+
+            max-width: 500px;
+
+            padding-top: 1rem;
+
+            opacity: 0;
+
+            transition:
+                opacity 0.35s ease;
+
+            p {
+
+                margin-bottom: 0.9rem;
+
+                color: rgba($color-light, 0.9);
+
+                font-size: 0.9rem;
+                line-height: 1.7;
+            }
+        }
+
+
+        // -----------------------------
+        // Discover Link
+        // -----------------------------
+
+        &__link {
+
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            color: $color-secondary;
+
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+
+            i {
+                transition: transform 0.3s ease;
+            }
+        }
+
+
+        // =================================
+        // Hover
+        // =================================
+
+        &:hover {
+
+            .tour-card__image {
+                transform: scale(1.06);
+            }
+
+            .tour-card__overlay {
+
+                background:
+                    linear-gradient(
+                        to top,
+                        rgba($color-dark, 0.92) 0%,
+                        rgba($color-dark, 0.55) 60%,
+                        rgba($color-dark, 0.1) 100%
+                    );
+            }
+
+            .tour-card__content {
+                transform: translateY(0);
+            }
+
+            .tour-card__description {
+                opacity: 1;
+            }
+
+            .tour-card__link i {
+                transform: translateX(5px);
+            }
+        }
+    }
+}

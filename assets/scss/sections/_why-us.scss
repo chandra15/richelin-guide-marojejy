@@ -1,0 +1,89 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.why-us-section {
+    @include section-padding;
+    position: relative;
+    overflow: hidden;
+    background: $color-primary;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        background: url("../images/pattern-bg.png") center / cover repeat;
+
+        opacity: 0.09;
+        pointer-events: none;
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .section-heading {
+        max-width: 760px;
+        margin: 0 auto 3.5rem;
+
+        &__text{ color: $color-white; }
+    }
+
+    .section-title{ color: $color-secondary;}
+
+    .why-us-card {
+        height: 100%;
+        padding: 2.5rem 1.5rem;
+        border: 1px solid rgba($color-dark, 0.08);
+        border-radius: 6px;
+        background: $color-white;
+        transition: all 0.35s ease;
+
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba($color-dark, 0.10);
+        }
+
+        &__icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+            background: rgba($color-secondary, 0.3);
+            color: $color-secondary;
+
+            font-size: 1.6rem;
+
+            transition: all 0.35s ease;
+        }
+
+        &__title {
+            margin-bottom: 0.8rem;
+
+            font-family: $font-heading;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: $color-dark;
+        }
+
+        &__text {
+            margin: 0;
+
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: $color-dark;
+        }
+
+        &:hover &__icon {
+            background: $color-secondary;
+            color: $color-white;
+            transform: rotateY(180deg);
+        }
+    }
+}

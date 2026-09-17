@@ -1,0 +1,296 @@
+@use "../abstracts/variables" as *;
+
+.site-header {
+
+    position: relative;
+    z-index: 1000;
+
+    // =================================
+    // Top Bar
+    // =================================
+
+    &__top-bar {
+        background-color: $color-dark;
+        color: $color-white;
+        font-size: 0.875rem;
+    }
+
+    &__top-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 42px;
+    }
+
+    &__top-left,
+    &__top-right {
+        display: flex;
+        align-items: center;
+    }
+
+    &__top-text {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    &__top-icon {
+        color: $color-secondary;
+        margin-right: 0.4rem;
+    }
+
+    &__contact-list {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__contact-item {
+
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child) {
+
+            padding-right: 1.25rem;
+            margin-right: 1.25rem;
+            border-right: 1px solid rgba($color-white, 0.3);
+
+        }
+
+        a {
+            color: $color-white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $color-secondary;
+            }
+        }
+    }
+
+
+    // =================================
+    // Main Navbar
+    // =================================
+
+    &__navbar {
+        background-color: $color-white;
+        padding: 1rem 0;
+        box-shadow: 0 2px 12px rgba($color-dark, 0.08);
+    }
+
+
+    // =================================
+    // Brand
+    // =================================
+
+    &__brand {
+
+        display: flex;
+        flex-direction: column;
+        line-height: 1;
+        text-decoration: none;
+
+        &-main {
+            font-family: $font-heading;
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: $color-primary;
+        }
+
+        &-sub {
+            margin-top: 0.3rem;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: $color-text;
+        }
+    }
+
+
+    // =================================
+    // Navigation
+    // =================================
+
+    &__nav {
+        align-items: center;
+        gap: 0.35rem;
+    }
+
+    &__nav-link {
+
+        position: relative;
+        padding: 0.7rem 0.8rem !important;
+
+        color: $color-text !important;
+        font-size: 0.95rem;
+        font-weight: 500;
+
+        transition: color 0.3s ease;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0.8rem;
+            right: 0.8rem;
+            bottom: 0.25rem;
+            height: 2px;
+            background-color: $color-secondary;
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.3s ease;
+        }
+
+        &:hover,
+        &.active {
+            color: $color-primary !important;
+        }
+
+        &:hover::after,
+        &.active::after {
+            transform: scaleX(1);
+        }
+    }
+
+
+    // =================================
+    // Dropdown
+    // =================================
+
+    &__dropdown {
+
+        border: 0;
+        border-radius: 0;
+        padding: 0.75rem 0;
+        min-width: 220px;
+
+        box-shadow: 0 10px 30px rgba($color-dark, 0.12);
+    }
+
+    &__dropdown-link {
+
+        padding: 0.65rem 1.25rem;
+        color: $color-muted;
+
+        &:hover {
+            background-color: rgba($color-primary, 0.06);
+            color: $color-primary;
+        }
+    }
+
+
+    // =================================
+    // CTA
+    // =================================
+
+    &__nav-item--cta {
+        margin-left: 0.75rem;
+    }
+
+
+    // =================================
+    // Mobile Toggle
+    // =================================
+
+    &__toggler {
+
+        border: 0;
+        padding: 0.5rem;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+
+// =====================================
+// Responsive
+// =====================================
+
+@media (max-width: 991.98px) {
+
+    .site-header {
+
+        &__top-inner {
+            justify-content: center;
+        }
+
+        &__top-left {
+            display: none;
+        }
+
+        &__contact-item {
+
+            &:not(:last-child) {
+                padding-right: 1rem;
+                margin-right: 1rem;
+            }
+        }
+
+        &__nav {
+            align-items: stretch;
+            padding-top: 1rem;
+        }
+
+        &__nav-link {
+
+            padding: 0.75rem 0 !important;
+
+            &::after {
+                left: 0;
+                right: auto;
+                width: 35px;
+            }
+        }
+
+        &__nav-item--cta {
+            margin: 0.75rem 0 0;
+        }
+
+        &__dropdown {
+            box-shadow: none;
+            padding: 0;
+        }
+    }
+}
+
+
+@media (max-width: 575.98px) {
+
+    .site-header {
+
+        &__top-bar {
+            font-size: 0.75rem;
+        }
+
+        &__top-inner {
+            min-height: 38px;
+        }
+
+        &__contact-list {
+            width: 100%;
+            justify-content: center;
+        }
+
+        &__contact-item {
+
+            &:not(:last-child) {
+                padding-right: 0.75rem;
+                margin-right: 0.75rem;
+            }
+        }
+
+        &__brand-main {
+            font-size: 1.35rem;
+        }
+
+        &__brand-sub {
+            font-size: 0.6rem;
+        }
+    }
+}

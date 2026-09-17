@@ -1,0 +1,19 @@
+@use "variables" as *;
+
+@mixin section-padding {
+    padding: $section-padding 0;
+
+    @media (min-width: 992px) {
+        padding: $section-padding-lg 0;
+    }
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin transition {
+    transition: $transition-base;
+}

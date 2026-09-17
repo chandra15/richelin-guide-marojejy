@@ -1,0 +1,65 @@
+@use "../abstracts/variables" as *;
+
+.btn-custom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 1px solid transparent;
+    border-radius: $radius-sm;
+    font-family: $font-body;
+    font-weight: 500;
+    transition: $transition-base;
+
+    // Medium
+    &--md {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    // Large
+    &--lg {
+        padding: 0.9rem 2rem;
+        font-size: 1rem;
+    }
+
+    // Small
+    &--sm {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    // Primary
+    &--primary {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &:hover {
+            background-color: $color-secondary;
+            color: $color-white;
+        }
+    }
+
+    // Secondary
+    &--secondary {
+        background-color: $color-secondary;
+        color: $color-white;
+
+        &:hover {
+            background-color: $color-accent;
+            color: $color-dark;
+        }
+    }
+
+    // Transparent / Outline
+    &--transparent {
+        background-color: transparent;
+        border-color: $color-white;
+        color: $color-white;
+
+        &:hover {
+            background-color: $color-white;
+            color: $color-primary;
+        }
+    }
+}

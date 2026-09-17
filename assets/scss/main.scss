@@ -1,0 +1,42 @@
+@use "abstracts/variables" as *;
+@use "abstracts/mixins" as *;
+
+/***
+Bootsrap@5.3
+***/ 
+
+@use "../../node_modules/bootstrap/scss/bootstrap";
+
+
+/***
+base
+***/ 
+@use "base/reset";
+@use "base/global";
+@use "base/typography";
+
+/***
+Componenets
+***/ 
+@use "components/buttons";
+
+
+/***
+Layout
+***/ 
+
+@use "layout/header";
+@use "layout/footer";
+
+
+/***
+Sections
+***/ 
+
+@use "sections/hero";
+@use "sections/about";
+@use "sections/packages";
+@use "sections/destinations";
+@use "sections/why-us";
+@use "sections/testimonials";
+@use "sections/cta";

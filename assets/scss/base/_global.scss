@@ -1,0 +1,20 @@
+@use "../abstracts/variables" as *;
+
+body {
+    font-family: $font-body;
+    color: $color-text;
+    background-color: $color-white;
+    line-height: 1.7;
+}
+
+.container {
+    width: 100%;
+}
+
+.section {
+    padding: $section-padding 0;
+
+    @media (min-width: 992px) {
+        padding: $section-padding-lg 0;
+    }
+}

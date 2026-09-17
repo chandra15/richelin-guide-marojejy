@@ -1,0 +1,110 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+
+.testimonials-section {
+    @include section-padding;
+
+    background: $color-light;
+
+    .section-heading {
+        margin-bottom: 3rem;
+    }
+
+    &__slider {
+
+
+        .owl-dots {
+            margin-top: 2rem;
+            text-align: center;
+
+            .owl-dot {
+                span {
+                    width: 9px;
+                    height: 9px;
+                    margin: 5px;
+                    background: rgba($color-primary, 0.3);
+                    transition: all 0.3s ease;
+                }
+
+                &.active span {
+                    width: 25px;
+                    border-radius: 10px;
+                    background: $color-primary;
+                }
+            }
+        }
+    }
+}
+
+.testimonial-card {
+    padding: 3rem 3.5rem;
+    text-align: center;
+
+    background: $color-white;
+    border-radius: 8px;
+
+    box-shadow: 0 10px 35px rgba($color-dark, 0.05);
+
+    &__icon {
+        margin-bottom: 1rem;
+
+        font-size: 2rem;
+        color: $color-primary;
+    }
+
+    &__rating {
+        margin-bottom: 1.5rem;
+
+        color: #e5a400;
+        font-size: 0.85rem;
+
+        i {
+            margin: 0 2px;
+        }
+    }
+
+    &__text {
+        max-width: 680px;
+        margin: 0 auto 2rem;
+
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: $color-dark;
+    }
+
+    &__author {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    &__avatar {
+        width: 55px;
+        height: 55px;
+        overflow: hidden;
+
+        border-radius: 50%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__name {
+        margin-bottom: 0.2rem;
+
+        font-family: $font-heading;
+        font-size: 1rem;
+        font-weight: 600;
+        color: $color-primary;
+    }
+
+    &__country {
+        font-size: 0.85rem;
+        color: $color-dark;
+    }
+}
