@@ -1,0 +1,131 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.marojejy-connection {
+    padding: 100px 0;
+    background-color: $color-light;
+
+    &__image-wrap {
+        position: relative;
+        padding: 0 25px 25px 0;
+    }
+
+    &__image {
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            display: block;
+            aspect-ratio: 4 / 4.5;
+            object-fit: cover;
+        }
+    }
+
+    &__image-border {
+        position: absolute;
+        top: 25px;
+        right: 0;
+        bottom: 0;
+        left: 25px;
+
+        border: 1px solid var(--color-primary);
+        z-index: 1;
+    }
+
+    &__content {
+        padding-left: 20px;
+
+        span.section-eyebrow{
+            color: $color-accent;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+        }
+    }
+
+    &__content > p {
+        margin-bottom: 18px;
+        color: $color-text;
+        line-height: 1.8;
+    }
+
+    &__features {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        margin: 30px 0;
+    }
+
+    &__feature {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        border-bottom: 1px solid #dedede;
+        padding-bottom: 18px;
+    }
+
+    &__feature-icon {
+        flex: 0 0 46px;
+
+        width: 46px;
+        height: 46px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+        background: rgba(193, 155, 60, 0.12);
+
+        color: $color-primary;
+        font-size: 18px;
+    }
+
+    &__feature h3 {
+        margin: 0 0 4px;
+
+        font-family: var(--font-heading);
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--color-heading);
+    }
+
+    &__feature p {
+        margin: 0;
+
+        font-size: 15px;
+        line-height: 1.6;
+        color: var(--color-text);
+    }
+
+    .btn-custom {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    @media (max-width: 991px) {
+
+        &__content {
+            padding-left: 0;
+        }
+    }
+
+    @media (max-width: 767px) {
+
+        padding: 70px 0;
+
+        &__image-wrap {
+            padding-right: 15px;
+            padding-bottom: 20px;
+        }
+
+        &__image-border {
+            top: 20px;
+            left: 20px;
+        }
+    }
+}
