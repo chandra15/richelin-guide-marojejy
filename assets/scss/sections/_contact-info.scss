@@ -1,0 +1,221 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.contact-info {
+    @include section-padding;
+    background-color: $color-light;
+
+    &__content {
+        padding-right: 30px;
+
+        .section-eyebrow{
+            color: $color-accent;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+        }
+    }
+
+    &__intro {
+        margin: 20px 0 35px;
+        color: $color-dark;
+        line-height: 1.8;
+    }
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        display: flex;
+        align-items: flex-start;
+        gap: 18px;
+        position: relative;
+        padding: 20px 0;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+    }
+
+    &__icon {
+        flex: 0 0 48px;
+        width: 48px;
+        height: 48px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+        background-color: rgba(193, 155, 60, 0.12);
+        color: $color-primary;
+
+        font-size: 18px;
+
+        transition: all 0.3s ease;
+    }
+
+    &__item:hover &__icon {
+        background-color: $color-primary;
+        color: #fff;
+        transform: translateY(-2px);
+    }
+
+    &__text {
+        padding-top: 2px;
+
+        h3 {
+            margin: 0 0 5px;
+            font-family: $font-heading;
+            font-size: 18px;
+            font-weight: 600;
+            color: $color-dark;
+        }
+
+        p {
+            margin: 0;
+            color: $color-dark;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        a {
+            color: $color-dark;
+            font-size: 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+
+    &__form-wrap {
+        padding: 45px;
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.06);
+
+        .section-eyebrow{
+            color: $color-accent;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+        }
+    }
+
+    
+    .contact-form {
+        margin-top: 30px;
+
+        &__group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: $color-dark;
+        }
+
+        &__input {
+            width: 100%;
+            padding: 13px 16px;
+
+            border: 1px solid rgba(0, 0, 0, 0.14);
+            border-radius: 3px;
+
+            background-color: #fff;
+            color: $color-dark;
+
+            font-family: inherit;
+            font-size: 14px;
+
+            outline: none;
+
+            transition:
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+
+            &::placeholder {
+                color: rgba(33, 37, 41, 0.5);
+            }
+
+            &:focus {
+                border-color: $color-primary;
+                box-shadow: 0 0 0 3px rgba(193, 155, 60, 0.1);
+            }
+        }
+
+        &__textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+    }
+
+
+    .btn-custom {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+
+        i {
+            transition: transform 0.3s ease;
+        }
+
+        &:hover i {
+            transform: translateX(4px);
+        }
+    }
+
+    @media (max-width: 991px) {
+
+        &__content {
+            padding-right: 0;
+        }
+
+        &__form-wrap {
+            padding: 35px;
+        }
+    }
+    @media (max-width: 767px) {
+        padding: 70px 0;
+
+        &__form-wrap {
+            padding: 30px 20px;
+        }
+
+        &__item {
+            gap: 14px;
+        }
+
+        &__icon {
+            flex-basis: 44px;
+            width: 44px;
+            height: 44px;
+            font-size: 16px;
+        }
+
+        .contact-form {
+            margin-top: 25px;
+        }
+    }
+
+    @media (max-width: 575px) {
+
+        &__form-wrap {
+            padding: 25px 18px;
+        }
+
+        &__intro {
+            margin-bottom: 25px;
+        }
+    }
+}
