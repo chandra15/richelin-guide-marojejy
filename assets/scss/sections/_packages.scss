@@ -163,27 +163,6 @@
         }
 
 
-        // -----------------------------
-        // Discover Link
-        // -----------------------------
-
-        &__link {
-
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-
-            color: $color-secondary;
-
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-
-            i {
-                transition: transform 0.3s ease;
-            }
-        }
 
 
         // =================================
@@ -218,6 +197,16 @@
             .tour-card__link i {
                 transform: translateX(5px);
             }
+        }
+    }
+
+
+    &__action a{
+        margin-top: 3rem;
+
+        &:hover{
+            background: $color-primary;
+            color: $color-white;
         }
     }
 }

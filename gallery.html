@@ -26,187 +26,223 @@
 
     <!-- ==============================
          Top Bar
-    =============================== -->
+    ================ ================ -->
     <div class="site-header__top-bar">
-
         <div class="container">
-
             <div class="site-header__top-inner">
-
                 <!-- Location -->
                 <div class="site-header__top-left">
-
                     <span class="site-header__top-text">
                         <i class="fa-solid fa-location-dot site-header__top-icon"></i>
                         Marojejy National Park, Madagascar
                     </span>
-
                 </div>
 
                 <!-- Contact -->
                 <div class="site-header__top-right">
-
                     <ul class="site-header__contact-list">
-
                         <li class="site-header__contact-item">
                             <a href="mailto:info@richelinguide-marojejy.com">
                                 <i class="fa-solid fa-envelope site-header__top-icon"></i>
                                 volamamyrichelin@gmail.com
                             </a>
                         </li>
-
                         <li class="site-header__contact-item">
                             <a href="tel:+261322935243">
                                 <i class="fa-solid fa-phone site-header__top-icon"></i>
-                                
-                                    +261322935243
+                                +261322935243
                             </a>
                         </li>
-
                     </ul>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
 
     <!-- ==============================
          Main Navigation
-    =============================== -->
+    ================ ================ -->
     <nav class="navbar navbar-expand-lg site-header__navbar">
-
         <div class="container">
 
-            <!-- Logo -->
+            <!-- =================================
+                 Logo
+            ================================== -->
             <a class="navbar-brand site-header__brand" href="index.html">
-
                 <span class="site-header__brand-main">
                     Richelin Guide
                 </span>
-
                 <span class="site-header__brand-sub">
                     Marojejy Madagascar
                 </span>
-
             </a>
 
-
-            <!-- Mobile Toggle -->
-            <button
-                class="navbar-toggler site-header__toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#mainNavigation"
-                aria-controls="mainNavigation"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-
+            <!-- =================================
+                 Mobile Toggler Button
+            ================================== -->
+            <button class="navbar-toggler site-header__toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-
             </button>
 
 
-            <!-- Navigation -->
-            <div class="collapse navbar-collapse site-header__collapse"
-                 id="mainNavigation">
-
+            <!-- =================================
+                 Desktop Navigation
+            ================================== -->
+            <div class="collapse navbar-collapse d-none d-lg-block" id="desktopNavbar">
                 <ul class="navbar-nav ms-auto site-header__nav">
-
+                    <!-- Home -->
                     <li class="nav-item site-header__nav-item">
-                        <a class="nav-link site-header__nav-link active"
-                           href="index.html">
+                        <a class="nav-link site-header__nav-link active" href="index.html">
                             Home
                         </a>
                     </li>
 
+                    <!-- About -->
                     <li class="nav-item site-header__nav-item">
-                        <a class="nav-link site-header__nav-link"
-                           href="about.html">
+                        <a class="nav-link site-header__nav-link" href="about.html">
                             About Us
                         </a>
                     </li>
 
-                    <li class="nav-item dropdown site-header__nav-item">
-
-                        <a class="nav-link dropdown-toggle site-header__nav-link"
-                           href="#"
-                           role="button"
-                           data-bs-toggle="dropdown"
-                           aria-expanded="false">
-                            Tours & Excursions
+                    <!-- Destinations Dropdown (Hover-enabled on desktop) -->
+                    <li class="nav-item dropdown site-header__nav-item site-header__dropdown-wrapper">
+                        <a class="nav-link dropdown-toggle site-header__nav-link site-header__dropdown-toggle" href="destination-marojejy.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Destinations<i class="fa-solid fa-caret-down site-header__caret"></i>
                         </a>
-
                         <ul class="dropdown-menu site-header__dropdown">
-
-                            <li>
-                                <a class="dropdown-item site-header__dropdown-link"
-                                   href="destinations.html">
-                                    Destinations
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item site-header__dropdown-link"
-                                   href="tours.html">
-                                    Tours & Excursions
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item site-header__dropdown-link"
-                                   href="tour-detail.html">
-                                    Tour Details
-                                </a>
-                            </li>
-
+                            <li><a class="dropdown-item site-header__dropdown-link" href="destination-marojejy.html">Marojejy National Park</a></li>
+                            <li><a class="dropdown-item site-header__dropdown-link" href="destination-andapa.html">Andapa</a></li>
+                            <li><a class="dropdown-item site-header__dropdown-link" href="destination-sava.html">SAVA Region</a></li>
+                            <li><a class="dropdown-item site-header__dropdown-link" href="destination-sambava.html">Sambava</a></li>
+                            <li><a class="dropdown-item site-header__dropdown-link" href="destination-antalaha.html">Antalaha</a></li>
                         </ul>
-
                     </li>
 
-                    <li class="nav-item site-header__nav-item">
-                        <a class="nav-link site-header__nav-link"
-                           href="gallery.html">
-                            Gallery
+                    <!-- Tours & Excursions Dropdown (Hover-enabled on desktop) -->
+                    <li class="nav-item dropdown site-header__nav-item site-header__dropdown-wrapper">
+                        <a class="nav-link dropdown-toggle site-header__nav-link site-header__dropdown-toggle" href="tour-marojejy-discover.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Tours & Excursions<i class="fa-solid fa-caret-down site-header__caret"></i>
                         </a>
+                        <ul class="dropdown-menu site-header__dropdown">
+                            <li><a class="dropdown-item site-header__dropdown-link" href="tour-marojejy-discover.html">Marojejy Discover</a></li>
+                            <li><a class="dropdown-item site-header__dropdown-link" href="tour-trekking-adventure.html">Trekking Adventure</a></li>
+                            <li><a class="dropdown-item site-header__dropdown-link" href="tour-wildlife-discovery.html">Wildlife Discovery</a></li>
+                            <li><a class="dropdown-item site-header__dropdown-link" href="tour-rainforest-adventure.html">Rainforest Adventure</a></li>
+                            <li><a class="dropdown-item site-header__dropdown-link" href="tour-culture-community.html">Culture & Community</a></li>
+                            <li><a class="dropdown-item site-header__dropdown-link" href="tour-northern-madagascar.html">Northern Madagascar</a></li>
+                        </ul>
                     </li>
 
+                    <!-- Gallery -->
                     <li class="nav-item site-header__nav-item">
-                        <a class="nav-link site-header__nav-link"
-                           href="blog.html">
-                            Blog
-                        </a>
+                        <a class="nav-link site-header__nav-link" href="gallery.html">Gallery</a>
                     </li>
 
+                    <!-- Blog -->
                     <li class="nav-item site-header__nav-item">
-                        <a class="nav-link site-header__nav-link"
-                           href="contact.html">
-                            Contact
-                        </a>
+                        <a class="nav-link site-header__nav-link" href="blog.html">Blog</a>
                     </li>
 
+                    <!-- Contact -->
+                    <li class="nav-item site-header__nav-item">
+                        <a class="nav-link site-header__nav-link" href="contact-us.html">Contact</a>
+                    </li>
+
+                    <!-- CTA -->
                     <li class="nav-item site-header__nav-item site-header__nav-item--cta">
-
-                        <a class="btn-custom btn-custom--primary btn-custom--lg"
-                           href="contact.html">
-                            Plan Your Trip
-                        </a>
-
+                        <a class="btn-custom btn-custom--primary btn-custom--lg" href="contact.html">Plan Your Trip</a>
                     </li>
-
                 </ul>
+            </div>
 
+
+            <!-- =================================
+                 Mobile Offcanvas (Untouched Behavior)
+            ================================== -->
+            <div class="offcanvas offcanvas-end site-header__offcanvas d-lg-none" tabindex="-1" id="mainNavigation" aria-labelledby="mainNavigationLabel">
+
+                <!-- Offcanvas Header -->
+                <div class="offcanvas-header">
+                    <div class="site-header__offcanvas-brand" id="mainNavigationLabel">
+                        <span class="site-header__brand-main">
+                            Richelin Guide
+                        </span>
+                        <span class="site-header__brand-sub">
+                            Marojejy Madagascar
+                        </span>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+                <!-- Offcanvas Body -->
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav site-header__mobile-nav">
+                        <!-- Home -->
+                        <li class="nav-item">
+                            <a class="nav-link site-header__mobile-link active" href="index.html">Home</a>
+                        </li>
+
+                        <!-- About -->
+                        <li class="nav-item">
+                            <a class="nav-link site-header__mobile-link" href="about.html">About Us</a>
+                        </li>
+
+                        <!-- Destinations -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle site-header__mobile-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Destinations
+                            </a>
+                            <ul class="dropdown-menu site-header__mobile-dropdown">
+                                <li><a class="dropdown-item" href="destination-marojejy.html">Marojejy National Park</a></li>
+                                <li><a class="dropdown-item" href="destination-andapa.html">Andapa</a></li>
+                                <li><a class="dropdown-item" href="destination-sava.html">SAVA Region</a></li>
+                                <li><a class="dropdown-item" href="destination-sambava.html">Sambava</a></li>
+                                <li><a class="dropdown-item" href="destination-antalaha.html">Antalaha</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Tours -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle site-header__mobile-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Tours & Excursions
+                            </a>
+                            <ul class="dropdown-menu site-header__mobile-dropdown">
+                                <li><a class="dropdown-item" href="tour-marojejy-discover.html">Marojejy Discover</a></li>
+                                <li><a class="dropdown-item" href="tour-trekking-adventure.html">Trekking Adventure</a></li>
+                                <li><a class="dropdown-item" href="tour-wildlife-discovery.html">Wildlife Discovery</a></li>
+                                <li><a class="dropdown-item" href="tour-rainforest-adventure.html">Rainforest Adventure</a></li>
+                                <li><a class="dropdown-item" href="tour-culture-community.html">Culture & Community</a></li>
+                                <li><a class="dropdown-item" href="tour-northern-madagascar.html">Northern Madagascar</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Gallery -->
+                        <li class="nav-item">
+                            <a class="nav-link site-header__mobile-link" href="gallery.html">Gallery</a>
+                        </li>
+
+                        <!-- Blog -->
+                        <li class="nav-item">
+                            <a class="nav-link site-header__mobile-link" href="blog.html">Blog</a>
+                        </li>
+
+                        <!-- Contact -->
+                        <li class="nav-item">
+                            <a class="nav-link site-header__mobile-link" href="contact-us.html">Contact</a>
+                        </li>
+
+                        <!-- CTA -->
+                        <li class="nav-item site-header__mobile-cta">
+                            <a class="btn-custom btn-custom--primary btn-custom--lg" href="contact.html">Plan Your Trip</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
         </div>
-
     </nav>
-
 </header>
-
 
 <section class="inner-hero inner-hero--gallery">
     <div class="inner-hero__overlay"></div>

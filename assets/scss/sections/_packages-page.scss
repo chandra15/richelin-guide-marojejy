@@ -1,0 +1,221 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+
+
+
+.packages-page {
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+    background-color: $color-surface;
+
+    // Section Header
+    &__header {
+        max-width: 760px;
+        margin: 0 auto 3.5rem;
+    }
+
+    &__subtitle {
+        display: inline-block;
+        margin-bottom: 0.75rem;
+
+        font-family: $font-body;
+        font-size: 0.875rem;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+
+        color: $color-secondary;
+    }
+
+    &__title {
+        margin-bottom: 1rem;
+
+        font-family: $font-heading;
+        font-size: 2.5rem;
+        font-weight: 700;
+
+        color: $color-dark;
+    }
+
+    &__description {
+        margin: 0;
+
+        font-family: $font-body;
+        font-size: 1rem;
+        line-height: 1.8;
+
+        color: $color-muted;
+    }
+
+    // Packages Grid
+    &__grid {
+        row-gap: 2rem;
+    }
+}
+
+
+// ---------------------------------------------
+// Package Card
+// ---------------------------------------------
+
+.package-card {
+    height: 100%;
+
+    overflow: hidden;
+
+    background-color: $color-white;
+    border-radius: $radius-md;
+
+    box-shadow: $shadow-sm;
+
+    transition: $transition-base;
+
+    // Hover Effect
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: $shadow-md;
+    }
+
+    // Image
+    &__image {
+        position: relative;
+
+        width: 100%;
+        height: 250px;
+
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: $transition-base;
+        }
+    }
+
+    &:hover &__image img {
+        transform: scale(1.04);
+    }
+
+    // Content
+    &__content {
+        padding: 1.25rem;
+    }
+
+    // Duration
+    &__duration {
+        display: inline-block;
+        margin-bottom: 0.5rem;
+
+        font-family: $font-body;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+
+        color: $color-dark;
+    }
+
+    // Title
+    &__title {
+        margin-bottom: 0.75rem;
+
+        font-family: $font-heading;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $color-dark;
+        border-bottom: 1px solid #dedede;
+        padding-bottom: 1rem;
+
+    }
+
+    // Description
+    &__description {
+        margin-bottom: 1.5rem;
+
+        font-family: $font-body;
+        font-size: 0.9rem;
+        line-height: 1.7;
+
+        color: $color-muted;
+    }
+
+    // View More
+    &__link{
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        font-family: $font-body;
+        font-size: 0.9rem;
+        font-weight: 600;
+
+        text-decoration: none;
+
+        color: $color-white;
+
+        transition: $transition-base;
+
+        i {
+            font-size: 0.75rem;
+            transition: $transition-base;
+        }
+
+        &:hover {
+            color: $color-dark;
+
+
+            i {
+                transform: translateX(4px);
+            }
+        }
+    }
+}
+
+
+// ---------------------------------------------
+// Responsive
+// ---------------------------------------------
+
+@media (max-width: 991.98px) {
+
+    .packages-page {
+
+        &__title {
+            font-size: 2.25rem;
+        }
+
+        &__header {
+            margin-bottom: 3rem;
+        }
+    }
+
+}
+
+
+@media (max-width: 575.98px) {
+
+    .packages-page {
+
+        &__title {
+            font-size: 2rem;
+        }
+
+        &__description {
+            font-size: 0.9rem;
+        }
+    }
+
+    .package-card {
+
+        &__image {
+            height: 220px;
+        }
+
+        &__content {
+            padding: 1.5rem;
+        }
+    }
+}

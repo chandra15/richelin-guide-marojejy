@@ -1,14 +1,21 @@
 @use "../abstracts/variables" as *;
 
 .site-header {
-
     position: relative;
     z-index: 1000;
 
     // =================================
+    // Sticky Header for Desktop
+    // =================================
+    @media (min-width: 992px) {
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+    }
+
+    // =================================
     // Top Bar
     // =================================
-
     &__top-bar {
         background-color: $color-dark;
         color: $color-white;
@@ -48,16 +55,13 @@
     }
 
     &__contact-item {
-
         display: flex;
         align-items: center;
 
         &:not(:last-child) {
-
             padding-right: 1.25rem;
             margin-right: 1.25rem;
             border-right: 1px solid rgba($color-white, 0.3);
-
         }
 
         a {
@@ -71,24 +75,20 @@
         }
     }
 
-
     // =================================
     // Main Navbar
     // =================================
-
     &__navbar {
         background-color: $color-white;
         padding: 1rem 0;
         box-shadow: 0 2px 12px rgba($color-dark, 0.08);
+        transition: padding 0.3s ease, box-shadow 0.3s ease;
     }
-
 
     // =================================
     // Brand
     // =================================
-
     &__brand {
-
         display: flex;
         flex-direction: column;
         line-height: 1;
@@ -111,27 +111,23 @@
         }
     }
 
-
     // =================================
-    // Navigation
+    // Desktop Navigation
     // =================================
-
     &__nav {
         align-items: center;
         gap: 0.35rem;
     }
 
     &__nav-link {
-
         position: relative;
         padding: 0.7rem 0.8rem !important;
-
         color: $color-text !important;
         font-size: 0.95rem;
         font-weight: 500;
-
         transition: color 0.3s ease;
 
+        // Underline animation
         &::after {
             content: "";
             position: absolute;
@@ -156,25 +152,53 @@
         }
     }
 
+    // =================================
+    // Desktop Dropdown & Hover Effects
+    // =================================
+    &__dropdown-wrapper {
+        @media (min-width: 992px) {
+            &:hover > .dropdown-menu {
+                display: block;
+                margin-top: 0;
+            }
+        }
+    }
 
-    // =================================
-    // Dropdown
-    // =================================
+    // Clear Bootstrap's native CSS generated caret arrow since we are using Font Awesome
+    &__dropdown-toggle {
+        &::after {
+            display: none !important;
+        }
+    }
+
+    // Styling for Font Awesome Caret Icon
+    &__caret {
+        font-size: 0.8rem;
+        margin-left: 0.35rem;
+        transition: transform 0.2s ease;
+    }
+
+    // Rotate caret smoothly when hovered wrapper is open
+    &__dropdown-wrapper:hover &__caret {
+        transform: rotate(180deg);
+    }
 
     &__dropdown {
-
         border: 0;
         border-radius: 0;
         padding: 0.75rem 0;
-        min-width: 220px;
-
+        min-width: 240px;
         box-shadow: 0 10px 30px rgba($color-dark, 0.12);
+        
+        @media (min-width: 992px) {
+            display: none; // Controlled via CSS hover wrapper on desktop
+        }
     }
 
     &__dropdown-link {
-
         padding: 0.65rem 1.25rem;
         color: $color-muted;
+        transition: background-color 0.3s ease, color 0.3s ease;
 
         &:hover {
             background-color: rgba($color-primary, 0.06);
@@ -182,22 +206,17 @@
         }
     }
 
-
     // =================================
-    // CTA
+    // Desktop CTA
     // =================================
-
     &__nav-item--cta {
         margin-left: 0.75rem;
     }
 
-
     // =================================
     // Mobile Toggle
     // =================================
-
     &__toggler {
-
         border: 0;
         padding: 0.5rem;
 
@@ -205,17 +224,90 @@
             box-shadow: none;
         }
     }
+
+    // =================================
+    // Mobile Offcanvas
+    // =================================
+    &__offcanvas {
+        width: 320px !important;
+        background-color: $color-white;
+    }
+
+    // =================================
+    // Offcanvas Brand
+    // =================================
+    &__offcanvas-brand {
+        display: flex;
+        flex-direction: column;
+        line-height: 1;
+
+        .site-header__brand-main {
+            font-size: 1.35rem;
+        }
+
+        .site-header__brand-sub {
+            margin-top: 0.3rem;
+            font-size: 0.6rem;
+        }
+    }
+
+    // =================================
+    // Mobile Navigation
+    // =================================
+    &__mobile-nav {
+        gap: 0.15rem;
+    }
+
+    &__mobile-link {
+        padding: 0.8rem 0 !important;
+        color: $color-text !important;
+        font-size: 1rem;
+        font-weight: 500;
+        border-bottom: 1px solid rgba($color-dark, 0.08);
+        transition: color 0.3s ease;
+
+        &:hover,
+        &.active {
+            color: $color-primary !important;
+        }
+    }
+
+    // =================================
+    // Mobile Dropdown
+    // =================================
+    &__mobile-dropdown {
+        position: static !important;
+        border: 0;
+        padding: 0 0 0.5rem 1rem;
+        margin: 0;
+        box-shadow: none;
+
+        .dropdown-item {
+            padding: 0.60rem 0;
+            color: $color-muted;
+            transition: color 0.3s ease;
+
+            &:hover {
+                background-color: transparent;
+                color: $color-primary;
+            }
+        }
+    }
+
+    // =================================
+    // Mobile CTA
+    // =================================
+    &__mobile-cta {
+        margin-top: 1rem;
+    }
 }
 
-
 // =====================================
-// Responsive
+// Responsive Styles
 // =====================================
 
 @media (max-width: 991.98px) {
-
     .site-header {
-
         &__top-inner {
             justify-content: center;
         }
@@ -225,45 +317,16 @@
         }
 
         &__contact-item {
-
             &:not(:last-child) {
                 padding-right: 1rem;
                 margin-right: 1rem;
             }
         }
-
-        &__nav {
-            align-items: stretch;
-            padding-top: 1rem;
-        }
-
-        &__nav-link {
-
-            padding: 0.75rem 0 !important;
-
-            &::after {
-                left: 0;
-                right: auto;
-                width: 35px;
-            }
-        }
-
-        &__nav-item--cta {
-            margin: 0.75rem 0 0;
-        }
-
-        &__dropdown {
-            box-shadow: none;
-            padding: 0;
-        }
     }
 }
 
-
 @media (max-width: 575.98px) {
-
     .site-header {
-
         &__top-bar {
             font-size: 0.75rem;
         }
@@ -278,7 +341,6 @@
         }
 
         &__contact-item {
-
             &:not(:last-child) {
                 padding-right: 0.75rem;
                 margin-right: 0.75rem;
@@ -291,6 +353,10 @@
 
         &__brand-sub {
             font-size: 0.6rem;
+        }
+
+        &__offcanvas {
+            width: 300px !important;
         }
     }
 }
