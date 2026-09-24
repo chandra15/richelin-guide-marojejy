@@ -112,6 +112,26 @@
                 transform 0.45s ease;
         }
 
+        &__meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        &__duration {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        &__price {
+            font-weight: 600;
+            color: $color-secondary;
+            white-space: nowrap;
+        }
+
 
         // -----------------------------
         // Title

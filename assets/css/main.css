@@ -12761,6 +12761,23 @@ Sections
   transform: translateY(65px);
   transition: transform 0.45s ease;
 }
+.tours-section .tour-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+.tours-section .tour-card__duration {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.tours-section .tour-card__price {
+  font-weight: 600;
+  color: #e6b85c;
+  white-space: nowrap;
+}
 .tours-section .tour-card__title {
   display: inline-block;
   margin: 0;
@@ -14057,6 +14074,28 @@ About Page
   object-fit: cover;
   transition: all 0.3s ease;
 }
+.package-card__price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+.package-card__price-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1c2a25;
+}
+.package-card__price-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e6b85c;
+  line-height: 1;
+}
+.package-card__price-unit {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1c2a25;
+}
 .package-card:hover .package-card__image img {
   transform: scale(1.04);
 }
@@ -14139,16 +14178,6 @@ About Page
 .package-details__intro {
   margin-bottom: 2rem;
 }
-.package-details__eyebrow {
-  display: inline-block;
-  margin-bottom: 0.5rem;
-  font-family: "Poppins", sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #0a906a;
-}
 .package-details__title {
   margin-bottom: 1rem;
   font-family: "Playfair Display", serif;
@@ -14167,7 +14196,7 @@ About Page
 .package-details__stats {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  margin-bottom: 4rem;
+  margin-bottom: 1.5rem;
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.249);
@@ -14213,6 +14242,31 @@ About Page
   font-weight: 600;
   color: #1c2a25;
 }
+.package-details__stat-value--price {
+  color: #0a906a;
+}
+.package-details__price-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 4rem;
+  padding: 1rem 1.25rem;
+  background-color: rgba(240, 56, 26, 0.06);
+  border-left: 3px solid #f0381a;
+  border-radius: 4px;
+}
+.package-details__price-note i {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  color: #f0381a;
+}
+.package-details__price-note p {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: #f0381a;
+}
 .package-details__section {
   margin-bottom: 4rem;
 }
@@ -14225,6 +14279,9 @@ About Page
   font-size: 0.95rem;
   line-height: 1.8;
   color: #3d4642;
+}
+.package-details__section p:last-child {
+  margin-bottom: 0;
 }
 .package-details__section-heading {
   margin-bottom: 1.5rem;
@@ -14245,6 +14302,45 @@ About Page
   font-size: 1.9rem;
   font-weight: 700;
   color: #1c2a25;
+}
+.package-details__notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: rgba(240, 56, 26, 0.06);
+  border-left: 4px solid #f0381a;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.249);
+}
+.package-details__notice-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: rgba(240, 56, 26, 0.1);
+  color: #f0381a;
+  font-size: 1rem;
+}
+.package-details__notice h3 {
+  margin-bottom: 0.75rem;
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f0381a;
+}
+.package-details__notice p {
+  margin-bottom: 0.65rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: #3d4642;
+}
+.package-details__notice p:last-child {
+  margin-bottom: 0;
 }
 .package-details__accordion .accordion-item {
   margin-bottom: 1rem;
@@ -14286,6 +14382,9 @@ About Page
   font-size: 0.9rem;
   line-height: 1.8;
   color: #3d4642;
+}
+.package-details__accordion .accordion-body p {
+  margin-bottom: 1rem;
 }
 .package-details__day {
   display: inline-flex;
@@ -14341,16 +14440,16 @@ About Page
   background-color: rgba(240, 56, 26, 0.1);
 }
 .package-details__list-card--excluded li::before {
-  color: #c98b3c;
-}
-.package-details__list-card i {
-  font-size: 2rem;
+  content: "\f00d";
+  color: #f0381a;
 }
 .package-details__list-header {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 1.25rem;
+  border-bottom: 1px solid #b8b8b8;
+  padding-bottom: 1.5rem;
 }
 .package-details__list-header h3 {
   margin: 0;
@@ -14369,6 +14468,9 @@ About Page
   background-color: rgba(10, 144, 106, 0.1);
   color: #0a906a;
 }
+.package-details__list-icon i {
+  font-size: 1rem;
+}
 .package-details__list-card ul {
   margin: 0;
   padding: 0;
@@ -14379,7 +14481,7 @@ About Page
   margin-bottom: 0.75rem;
   padding-left: 1.2rem;
   font-family: "Poppins", sans-serif;
-  font-size: 0.85rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: #3d4642;
 }
@@ -14428,6 +14530,15 @@ About Page
   font-size: 1.5rem;
   font-weight: 700;
   color: #ffffff;
+}
+.package-details__booking-header small {
+  display: block;
+  margin-top: 0.5rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #ffffff;
+  opacity: 0.9;
 }
 .package-details__booking-body {
   padding: 1.5rem;
@@ -14530,7 +14641,7 @@ About Page
   align-items: center;
   gap: 0.65rem;
   font-family: "Poppins", sans-serif;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
   color: #1c2a25;
@@ -14552,7 +14663,7 @@ About Page
     font-size: 2.25rem;
   }
   .package-details__stats {
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
   }
 }
 @media (max-width: 767.98px) {
@@ -14578,7 +14689,14 @@ About Page
   .package-details__section-title {
     font-size: 1.65rem;
   }
+  .package-details__price-note {
+    margin-bottom: 3rem;
+  }
+  .package-details__notice {
+    padding: 1.25rem;
+  }
   .package-details__accordion .accordion-button {
+    align-items: flex-start;
     padding: 1rem;
     font-size: 0.85rem;
   }
@@ -14608,6 +14726,17 @@ About Page
   }
   .package-details__stat-value {
     font-size: 0.8rem;
+  }
+  .package-details__price-note {
+    padding: 0.9rem 1rem;
+  }
+  .package-details__price-note p {
+    font-size: 0.75rem;
+  }
+  .package-details__notice {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.25rem;
   }
   .package-details__list-card {
     padding: 1.5rem;

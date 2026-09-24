@@ -96,6 +96,32 @@
         }
     }
 
+    &__price {
+        display: flex;
+        align-items: baseline;
+        gap: 0.35rem;
+        margin-bottom: 1rem;
+    }
+
+    &__price-label {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: $color-dark;
+    }
+
+    &__price-value {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $color-secondary;
+        line-height: 1;
+    }
+
+    &__price-unit {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: $color-dark;
+    }
+
     &:hover &__image img {
         transform: scale(1.04);
     }
